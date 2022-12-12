@@ -3,7 +3,7 @@ import { useGetPokemonByNameQuery } from "../../app/pokemon_Api";
 export function Pokemon() {
     const { data, error, isLoading } = useGetPokemonByNameQuery("bulbasaur");
     return (
-        <div className="App">
+        <div>
             {error ? (
                 <>Oh no, there was an error</>
             ) : isLoading ? (
