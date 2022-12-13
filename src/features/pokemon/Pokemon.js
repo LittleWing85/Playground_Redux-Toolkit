@@ -1,7 +1,11 @@
+import { useSelector } from "react-redux";
 import { useGetPokemonByNameQuery } from "../../app/pokemon_Api";
 
 export function Pokemon() {
-    const { data, error, isLoading } = useGetPokemonByNameQuery("bulbasaur");
+    const currentPokemon = useSelector((state) => state.currentPokemon);
+    const { data, error, isLoading } = useGetPokemonByNameQuery(
+        currentPokemon.name
+    );
     return (
         <div>
             {error ? (
