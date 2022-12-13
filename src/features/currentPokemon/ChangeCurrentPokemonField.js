@@ -29,6 +29,7 @@ export function ChangeCurrentPokemonField() {
                 <label htmlFor="currentPokemon">
                     Please insert the Pokemon you're interested in:
                 </label>
+                <br></br>
                 <input
                     type="text"
                     name="currentPokemon"
