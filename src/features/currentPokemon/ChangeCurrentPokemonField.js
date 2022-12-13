@@ -1,21 +1,9 @@
-/* import { useState } from "react"; */
 import { useDispatch, useSelector } from "react-redux";
 import { currentPokemonChanged } from "./currentPokemonSlice";
 
 export function ChangeCurrentPokemonField() {
-    /* const [name, setName] = useState(""); */
     const currentPokemon = useSelector((state) => state.currentPokemon);
     const dispatch = useDispatch();
-
-    /* function onNameChanged(event) {
-        setName(event.target.value);
-    } */
-
-    /*     function onSubmit() {
-        dispatch(currentPokemonChanged({ name }));
-        console.log(name);
-        setName("");
-    } */
 
     function onSubmit(event) {
         event.preventDefault();
@@ -26,21 +14,17 @@ export function ChangeCurrentPokemonField() {
     return (
         <div>
             <form onSubmit={onSubmit}>
-                <label htmlFor="currentPokemon">
+                <label htmlFor="currentPokemonId">
                     Please insert the Pokemon you're interested in:
                 </label>
                 <br></br>
                 <input
                     type="text"
                     name="currentPokemon"
-                    id="currentPokemon"
+                    id="currentPokemonId"
                     defaultValue={currentPokemon.name}
-                    /* value={name} */
-                    /* onChange={onNameChanged} */
                 ></input>
-                <button /* type="button" onClick={onSubmit} */>
-                    Submit Name
-                </button>
+                <button>Submit Name</button>
             </form>
         </div>
     );
